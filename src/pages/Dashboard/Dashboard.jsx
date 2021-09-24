@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import useQuizContext, { useQuizManagement } from '../../hooks/QuizManagement';
+import { useQuizManagement } from '../../hooks/QuizManagement';
 import Button from '@material-ui/core/Button';
-import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
-import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 
 import { Container, ButtonContainer, Title } from './_Dashboard';
 import { TextField } from '@material-ui/core';
@@ -45,12 +43,11 @@ export const Dashboard = () => {
         <ButtonContainer>
           {questionsNumber > 0 && (
             <Button
-              variant="contained"
-              color="primary"
+              variant="outlined"
+              size="large"
               onClick={() => handleNextPage()}
             >
               Next
-              <ArrowForwardIosIcon />
             </Button>
           )}
         </ButtonContainer>

@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
 import { useQuizManagement } from '../../hooks/QuizManagement';
-import { WrapperPage } from '../../shared/components/WrapperPage/WrapperPage';
-
 import Radio from '@material-ui/core/Radio';
 import {
   ButtonWrapper,
@@ -15,7 +12,6 @@ import {
   Button,
   FormControl,
   FormControlLabel,
-  FormLabel,
   RadioGroup,
 } from '@material-ui/core';
 import { useHistory } from 'react-router';

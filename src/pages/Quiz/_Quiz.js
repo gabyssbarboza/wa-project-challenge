@@ -53,6 +53,10 @@ export const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 2rem;
+
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+  }
 `;
 
 export const QuestionTitle = styled.h1`
@@ -68,4 +72,8 @@ export const QuestionContainer = styled.div`
   flex-direction: column;
   border-radius: 10px;
   margin: 2rem 10rem auto;
+
+  @media screen and (max-width: 780px) {
+    width: 95%;
+  }
 `;
