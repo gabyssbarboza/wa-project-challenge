@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import useQuizContext, { useQuizManagement } from '../../hooks/QuizManagement';
 import Button from '@material-ui/core/Button';
@@ -11,12 +11,20 @@ import { WrapperPage } from '../../shared/components/WrapperPage/WrapperPage';
 
 export const Dashboard = () => {
   const { questionsNumber, setQuestionsNumber } = useQuizManagement();
+  const [lastScore, setLastScore] = useState(0);
+
+  useEffect(() => {
+    const isThereLastScore = localStorage.getItem('lastScore');
+
+    if (isThereLastScore) {
+      setLastScore(isThereLastScore);
+    }
+  }, []);
 
   let history = useHistory();
 
   function handleNextPage() {
     localStorage.setItem('questionsNum', questionsNumber);
-
     history.push('/start-quiz');
   }
 
@@ -24,7 +32,6 @@ export const Dashboard = () => {
     <WrapperPage>
       <Container>
         <Title>Welcome!</Title>
-
         <TextField
           id="outlined-number"
           label="Número de questões"
@@ -47,6 +54,7 @@ export const Dashboard = () => {
             </Button>
           )}
         </ButtonContainer>
+        {lastScore ? <p>Última pontuação: {lastScore} </p> : ''}
       </Container>
     </WrapperPage>
   );
