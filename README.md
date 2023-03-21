@@ -2,7 +2,6 @@
 
 **Link preview**: https://zen-aryabhata-4a0607.netlify.app/
 
-O projeto WAQuiz foi desenvolvimento como parte de um teste técnico para a vaga de front-end da empresa.
 
 ## Case 💬
 
